@@ -2,6 +2,8 @@
 
 达克效应（英语：Dunning-Kruger effect），是一种认知偏差，能力欠缺的人有一种虚幻的自我优越感，错误地认为自己比真实情况更加优秀。简而言之，庸人容易因欠缺自知之明而自我膨胀。
 
+# 凯利判据(Kelly Criterion） 1
+
 # 马尔可夫定理 1
 
 在统计学中，高斯-马尔可夫定理（Gauss-Markov Theorem）陈述的是：在线性回归模型中，如果误差满足零均值、同方案且互不相关，则回归系数的最佳线性无偏估计（BLUE, Best Linear unbiased estimator）就是普通最小二乘法估计。
