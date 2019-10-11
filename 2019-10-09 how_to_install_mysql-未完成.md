@@ -23,5 +23,35 @@ TITLE:如何安装和使用MySQL
 
 `SHOW COLUMNS FROM Tablename`
 
+- 创建新数据库
+
+ `create databse databasename`
+
+ # 如何用pymysql连接MySQL数据库
+
+ ```
+ # 导入pymysql库
+ import pymysql
+
+ # 打开数据库连接
+ db = pymysql.Connect(
+    host='localhost',
+    port=3306,
+    user='root',
+    passwd='158216dl',
+    db='sakila',
+    charset='utf8'
+)
+
+# 使用 cursor() 方法创建一个游标对象 cursor
+cursor = db.cursor()
+
+# 执行数据库操作（需要研究）
+
+# 关闭数据库连接
+cursor.close()
+db.close()
+ ```
+
 
 
