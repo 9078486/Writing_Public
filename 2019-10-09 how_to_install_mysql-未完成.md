@@ -112,6 +112,10 @@ date(yyyymmdd) | 容纳日期。
 
 `drop table tablename;`
 
+- 显示表里的所有数据
+
+`select * from tablename;`
+
 ## 服务器
 
  - 返回服务器的连接数
@@ -125,7 +129,7 @@ date(yyyymmdd) | 容纳日期。
  import pymysql
 
  # 打开数据库连接
- db = pymysql.Connect(
+db = pymysql.Connect(
     host='localhost',
     port=3306,
     user='root',
@@ -136,6 +140,9 @@ date(yyyymmdd) | 容纳日期。
 
 # 使用 cursor() 方法创建一个游标对象 cursor
 cursor = db.cursor()
+
+# 提交到数据库执行
+db.commit()
 
 # 执行数据库操作（需要研究）
 
