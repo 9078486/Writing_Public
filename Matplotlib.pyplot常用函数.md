@@ -84,7 +84,7 @@ plt.hist(height, bins, color='g', label='Height')
 plt.legend()
 plt.show()
 ```
-# pie(x, labels=None, colors=None, autopct=None, pctdistance=0.6, labeldistance=1.1, startangle=None, radius=None, counterclock=True)
+# pie(x, labels=None, colors=None, explode=None, autopct=None, pctdistance=0.6, labeldistance=1.1, startangle=None, radius=None, counterclock=True)
 
 ```
 import matplotlib.pyplot as plt
@@ -94,10 +94,11 @@ mpl.rcParams['font.sans-serif'] = ['SimHei']
 
 labels = ['房贷', '饮食', '出行', '教育']
 data = [8000, 2000, 2000, 3000]
+explode = [0.1, 0, 0, 0]
 
-plt.pie(data, labels=labels, colors=['r', 'b', 'g', 'purple'],
+plt.pie(data, labels=labels, explode=explode, colors=['r', 'b', 'g', 'purple'],
 	autopct='%1.2f%%', pctdistance=0.6, labeldistance=0.8,
-	radius=1.5, counterclock=True)
+	radius=1.5, counterclock=True, startangle=90)
 plt.show()
 ```
 
