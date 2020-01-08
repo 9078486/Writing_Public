@@ -84,6 +84,22 @@ plt.hist(height, bins, color='g', label='Height')
 plt.legend()
 plt.show()
 ```
+
+# legend(title=None, loc='best')
+
+```
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(14)
+y = np.sin(x / 2)
+
+plt.step(x, y + 2, label='pre (default)')
+
+plt.legend(title='Parameter where:', loc='upper right')
+plt.show()
+```
+
 # pie(x, labels=None, colors=None, explode=None, autopct=None, pctdistance=0.6, labeldistance=1.1, startangle=None, radius=None, counterclock=True)
 
 ```
@@ -99,6 +115,20 @@ explode = [0.1, 0, 0, 0]
 plt.pie(data, labels=labels, explode=explode, colors=['r', 'b', 'g', 'purple'],
 	autopct='%1.2f%%', pctdistance=0.6, labeldistance=0.8,
 	radius=1.5, counterclock=True, startangle=90)
+plt.show()
+```
+
+# plot(x, y, label=None)
+
+```
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(14)
+y = np.sin(x / 2)
+
+plt.plot(x, y, label='plot example')
+plt.legend()
 plt.show()
 ```
 
@@ -125,6 +155,22 @@ plt.ylabel('y data')
 plt.savefig(r'D:\test2', dpi= 100)
 ```
 
+# scatter(x, y, s=None, alpha=None, label=None)
+
+```
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+
+x = [1, 5, 3, 8, 6]
+y = [7, 4, 2, 9, 10]
+s = [20, 80, 30, 90, 150]
+print(s)
+plt.scatter(x, y, s, alpha=0.9, label='test')
+plt.legend()
+plt.show()
+```
+
+
 # show()
 
 ```
@@ -145,6 +191,19 @@ plt.stem(x, y, linefmt=':', bottom=2, label='test', use_line_collection=True)
 plt.legend()
 plt.show()
 ```
+# step(x, y, label=None)
+
+```
+import matplotlib.pyplot as plt
+
+x = [0, 1, 2]
+y = [3, 5, 7]
+
+plt.step(x, y, label='plot1')
+plt.legend()
+plt.show()
+```
+
 
 # suptitle(t)
 
@@ -200,6 +259,21 @@ plt.title('Example for title()')
 plt.xlabel('xlabel')
 ```
 
+# ylim((bottom, top))
+
+```
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(14)
+y = np.sin(x / 2)
+
+plt.plot(x, y, label='plot example')
+plt.xlim((-2, 20))
+plt.legend()
+plt.show()
+```
+
 # xticks(ticks, [labels])
 
 ```
@@ -229,6 +303,21 @@ plt.show()
 
 ```
 plt.ylabel('ylabel')
+```
+
+# ylim((bottom, top))
+
+```
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(14)
+y = np.sin(x / 2)
+
+plt.plot(x, y, label='plot example')
+plt.ylim((-2, 20))
+plt.legend()
+plt.show()
 ```
 
 # yticks(ticks, [labels]）
