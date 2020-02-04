@@ -15,6 +15,22 @@ plt.plot(x, y)
 plt.show()
 ```
 
+# annotate(s, xy, xytext=None, arrowprops=None)
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, ax = plt.subplots()
+
+t = np.arange(0.0, 5.0, 0.01)
+s = np.cos(2*np.pi*t)
+line, = ax.plot(t, s, lw=2)
+
+ax.annotate('local max', xy=(2, 1), xytext=(3, 1.5), arrowprops=dict(facecolor='green'))
+plt.show()
+```
+
 # bar(x, height, width=0.8, bottom=None, color, tick_label)
 
 ```
@@ -36,6 +52,21 @@ plt.bar(ind, womenMeans, width,bottom=menMeans, color='g')
 
 plt.show()
 ```
+# barh(y, width, height=0.8, left=None, align='center', color=None, tick_label=None)
+
+```
+import numpy as np
+import matplotlib.pyplot as plt
+
+y = [0, 3, 5, 7, 9]
+width = [2, 7, 5, 3, 2]
+color = ['red']
+
+plt.barh(y, width, height=1, left=3, align='edge', 
+	color=color, tick_label=['A', 'B', 'C', 'D', 'E'],)
+plt.show()
+```
+
 # boxplot(x, sym='b+', showmeans=True, patch_artist=True, vert=False, meanline=False)
 
 ```
@@ -46,6 +77,21 @@ a = np.array([2, 2.5, 4, 6, 7, 8, 13, 17, 18, 34, 67])
 
 plt.boxplot(a, sym='b+', showmeans=True, patch_artist=True,
  vert=True, meanline=False)
+plt.show()
+```
+
+# broken_barh(xranges, yrange, facecolors=None)
+
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, ax = plt.subplots()
+ax.broken_barh([(110, 30), (150, 10), (170, 20)],  (10, 9),
+	facecolors='green')
+ax.broken_barh([(10, 50), (100, 20), (130, 10)], (20, 9),
+	facecolors=('tab:orange', 'tab:green', 'tab:green'))
+
 plt.show()
 ```
 
@@ -69,7 +115,7 @@ plt.show()
 ```
 plt.grid(axis='y', color='r', linewidth=1)
 ```
-# hist(x, bins=None, color=None, label=None)
+# hist(x, bins=None, color=None, label=None, alpha=None)
 
 ```
 import numpy as np
@@ -118,7 +164,7 @@ plt.pie(data, labels=labels, explode=explode, colors=['r', 'b', 'g', 'purple'],
 plt.show()
 ```
 
-# plot(x, y, label=None)
+# plot(x, y, label=None, lw=none)
 
 ```
 import numpy as np
@@ -127,7 +173,7 @@ import matplotlib.pyplot as plt
 x = np.arange(14)
 y = np.sin(x / 2)
 
-plt.plot(x, y, label='plot example')
+plt.plot(x, y, label='plot example', lw=5)
 plt.legend()
 plt.show()
 ```
@@ -203,7 +249,11 @@ plt.step(x, y, label='plot1')
 plt.legend()
 plt.show()
 ```
+# subplots_adjust(left=0.125,  right=0.9, bottom=0.1, top=0.9)
 
+```
+plt.subplots_adjust(left=0.125,  right=0.9, bottom=0.1, top=0.9)
+```
 
 # suptitle(t)
 
@@ -246,7 +296,38 @@ plt.text(2 + 0.35/2, 20, 'test for text',bbox=dict(facecolor='g', alpha=0.9),fon
 
 plt.show()
 ```
+# tight_layout()
 
+```
+import numpy as np
+import matplotlib.pyplot as plt
+
+t = np.arange(0.0, 1.0 + 0.01, 0.01)
+s = np.cos(2 * 2*np.pi * t)
+t[41:60] = np.nan
+
+plt.subplot(2, 1, 1)
+plt.plot(t, s, '-', linewidth=2)
+
+plt.xlabel('time (s)')
+plt.ylabel('voltage (mV)')
+plt.title('A sine wave with a gap of NaNs between 0.4 and 0.6')
+plt.grid(True)
+
+plt.subplot(2, 1, 2)
+t[0] = np.nan
+t[-1] = np.nan
+plt.plot(t, s, '-', lw=2)
+plt.title('Also with NaN in first and last point')
+
+plt.xlabel('time (s)')
+plt.ylabel('more nans')
+plt.grid()
+
+plt.tight_layout()
+
+plt.show()
+```
 # title(label)
 
 ```
@@ -274,7 +355,7 @@ plt.legend()
 plt.show()
 ```
 
-# xticks(ticks, [labels])
+# xticks(ticks, [labels], rotation=None)
 
 ```
 import matplotlib.pyplot as plt
